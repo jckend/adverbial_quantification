@@ -153,6 +153,17 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
   } 
   timeline.push(rdk_trial)
 
+  var trial = {
+    type: jsPsychRdk, 
+    number_of_apertures: 3, //This needs to be set if more than one aperture
+    trial_duration: 10000,
+    correct_choice: "a",
+    RDK_type: 3, //Applied to all apertures if only one value
+    aperture_width: 200, //Applied to all apertures if only one value
+    number_of_dots: [50, 200, 100], //Different parameter for each aperture. Array length must equal number_of_apertures
+    aperture_center_x: [(window.innerWidth/2)-300,window.innerWidth/2,(window.innerWidth/2)+300] //Separate the apertures on the screen (window.innerWidth/2 is the middle of the screen)
+}
+
   /* start the experiment */
   // @ts-expect-error allow timeline to be type jsPsych TimelineArray
   await jsPsych.run(timeline)
