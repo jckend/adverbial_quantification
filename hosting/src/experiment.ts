@@ -150,47 +150,19 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
   timeline.push(instructions)
 
   /* define trial stimuli array for timeline variables */
-  const test_stimuli: Record<string, string>[] = [
-    { stimulus: imgStimBlue, correct_response: 'f' as KeyboardResponse },
-    { stimulus: imgStimOrange, correct_response: 'j' as KeyboardResponse },
-  ]
-
-  /* define fixation and test trials */
-  const fixation = {
-    type: jsPsychHtmlKeyboardResponse,
-    stimulus: '<div style="font-size:60px;">+</div>',
-    choices: 'NO_KEYS',
-    trial_duration: function () {
-      return jsPsych.randomization.sampleWithoutReplacement([250, 500, 750, 1000, 1250, 1500, 1750, 2000], 1)[0]
-    },
-    data: {
-      task: 'fixation' satisfies Task,
-    },
-  }
-
-  const test = {
-    type: jsPsychImageKeyboardResponse,
-    stimulus: jsPsych.timelineVariable('stimulus') as unknown as string,
-    choices: ['f', 'j'] satisfies KeyboardResponse[],
-    data: {
-      task: 'response' satisfies Task,
-      correct_response: jsPsych.timelineVariable('correct_response') as unknown as string,
-    },
-    on_finish: function (data: TrialData) {
-      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition, unicorn/no-null
-      data.correct = jsPsych.pluginAPI.compareKeys(data.response || null, data.correct_response || null)
-      data.saveIncrementally = true
-    },
-  }
-
-  /* define test procedure */
-  const test_procedure = {
-    timeline: [fixation, test],
-    timeline_variables: test_stimuli,
-    repetitions: 3,
-    randomize_order: true,
-  }
-  timeline.push(test_procedure)
+  var rdk_trial = {
+  type: "rdk",
+  post_trial_gap: 0, // No inter-trial interval
+  number_of_dots: 200, // Total number of dots in the aperture
+  RDK_type: 3, // Type of RDK (e.g., global motion)
+  choices: ["a", "l"], // Available key choices for response
+  correct_choice: "a", // The correct key for this trial
+  coherent_direction: 180, // Direction of coherent motion in degrees (e.g., left)
+  trial_duration: 1000, // Duration of the trial in milliseconds
+  background_color: "white",
+  dot_color: "black"
+  } 
+  timeline.push(rdk_trial)
 
   /* define debrief */
   const debrief_block = {
