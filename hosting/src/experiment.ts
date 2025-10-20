@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-
+import jsPsychRdk from '@jspsych-contrib/plugin-rdk'
 import jsPsychHtmlKeyboardResponse from '@jspsych/plugin-html-keyboard-response'
 import jsPsychImageKeyboardResponse from '@jspsych/plugin-image-keyboard-response'
 import jsPsychPreload from '@jspsych/plugin-preload'
