@@ -163,6 +163,7 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
     number_of_dots: [50, 200, 100], //Different parameter for each aperture. Array length must equal number_of_apertures
     aperture_center_x: [(window.innerWidth/2)-300,window.innerWidth/2,(window.innerWidth/2)+300] //Separate the apertures on the screen (window.innerWidth/2 is the middle of the screen)
 }
+  timeline.push(trial)
 
   /* start the experiment */
   // @ts-expect-error allow timeline to be type jsPsych TimelineArray
