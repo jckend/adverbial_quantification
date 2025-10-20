@@ -143,6 +143,7 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
   post_trial_gap: 0, // No inter-trial interval
   number_of_dots: 200, // Total number of dots in the aperture
   RDK_type: 3, // Type of RDK (e.g., global motion)
+  move_distance: 0,
   choices: ["a", "l"], // Available key choices for response
   correct_choice: "a", // The correct key for this trial
   coherent_direction: 180, // Direction of coherent motion in degrees (e.g., left)
