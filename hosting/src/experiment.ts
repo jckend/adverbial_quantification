@@ -150,7 +150,7 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
   timeline.push(instructions)
 
   /* define trial stimuli array for timeline variables */
-  var rdk_trial = {
+  const rdk_trial = {
   type: "rdk",
   post_trial_gap: 0, // No inter-trial interval
   number_of_dots: 200, // Total number of dots in the aperture
