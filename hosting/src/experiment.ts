@@ -150,7 +150,7 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
   timeline.push(instructions)
 
   /* define trial stimuli array for timeline variables */
-  const rdk_trial = {
+  var rdk_trial = {
   type: "rdk",
   post_trial_gap: 0, // No inter-trial interval
   number_of_dots: 200, // Total number of dots in the aperture
@@ -162,7 +162,14 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
   background_color: "white",
   dot_color: "black"
   } 
-  timeline.push(rdk_trial)
+
+  const test_procedure = {
+			timeline: [rdk_trial],
+			timeline_variables: test_stimuli,    
+			repetitions: 2,
+			randomize_order: true
+	}
+  timeline.push(test_procedure)
 
   /* start the experiment */
   // @ts-expect-error allow timeline to be type jsPsych TimelineArray
