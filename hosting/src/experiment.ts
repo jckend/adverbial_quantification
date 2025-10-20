@@ -139,7 +139,7 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
 
   /* define trial stimuli array for timeline variables */
   var rdk_trial = {
-  type: "rdk",
+  type: jsPsychRdk,
   post_trial_gap: 0, // No inter-trial interval
   number_of_dots: 200, // Total number of dots in the aperture
   RDK_type: 3, // Type of RDK (e.g., global motion)
