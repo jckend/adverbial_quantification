@@ -138,6 +138,19 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
   timeline.push(instructions)
 
   /* define trial stimuli array for timeline variables */
+  const fixation = {
+    type: jsPsychHtmlKeyboardResponse,
+    stimulus: '<div style="font-size:60px;">+</div>',
+    choices: 'NO_KEYS',
+    trial_duration: function () {
+      return jsPsych.randomization.sampleWithoutReplacement([250, 500, 750, 1000, 1250, 1500, 1750, 2000], 1)[0]
+    },
+    data: {
+      task: 'fixation' satisfies Task,
+    },
+  }
+  timeline.push(fixation) 
+  
   var trial1 = {
     type: jsPsychRdk, 
     number_of_apertures: 3, //This needs to be set if more than one aperture
@@ -151,6 +164,7 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
     aperture_center_x: [(window.innerWidth/2)-150, (window.innerWidth/2)-150, (window.innerWidth/2)+150] //Separate the apertures on the screen (window.innerWidth/2 is the middle of the screen)
  }
   timeline.push(trial1)
+  timeline.push(fixation) 
 
   var trial2 = {
     type: jsPsychRdk, 
