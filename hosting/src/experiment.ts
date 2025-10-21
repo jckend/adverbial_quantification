@@ -149,8 +149,7 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
       task: 'fixation' satisfies Task,
     },
   }
-  timeline.push(fixation) 
-  
+
   var trial1 = {
     type: jsPsychRdk, 
     number_of_apertures: 3, //This needs to be set if more than one aperture
@@ -163,10 +162,8 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
     number_of_dots: [150, 50, 200], //Different parameter for each aperture. Array length must equal number_of_apertures
     aperture_center_x: [(window.innerWidth/2)-150, (window.innerWidth/2)-150, (window.innerWidth/2)+150] //Separate the apertures on the screen (window.innerWidth/2 is the middle of the screen)
  }
-  timeline.push(trial1)
-  timeline.push(fixation) 
 
-  var trial2 = {
+var trial2 = {
     type: jsPsychRdk, 
     number_of_apertures: 3, //This needs to be set if more than one aperture
     trial_duration: 10000,
@@ -178,7 +175,6 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
     number_of_dots: [150, 50, 200], //Different parameter for each aperture. Array length must equal number_of_apertures
     aperture_center_x: [(window.innerWidth/2)-150, (window.innerWidth/2)-150, (window.innerWidth/2)+150] //Separate the apertures on the screen (window.innerWidth/2 is the middle of the screen)
  }
-  timeline.push(trial2)
 
   var trial3 = {
     type: jsPsychRdk, 
@@ -192,7 +188,14 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
     number_of_dots: [200, 150, 50], //Different parameter for each aperture. Array length must equal number_of_apertures
     aperture_center_x: [(window.innerWidth/2)-150, (window.innerWidth/2)+150, (window.innerWidth/2)+150] //Separate the apertures on the screen (window.innerWidth/2 is the middle of the screen)
  }
-  timeline.push(trial3)
+
+  const test_procedure = {
+    timeline: [fixation, trial1, fixation, trial2, fixation, trial3],
+    repetitions: 1,
+    randomize_order: true,
+  }
+  timeline.push(test_procedure)
+
 
 
   /* start the experiment */
