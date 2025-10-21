@@ -138,22 +138,7 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
   timeline.push(instructions)
 
   /* define trial stimuli array for timeline variables */
-  var rdk_trial = {
-  type: jsPsychRdk,
-  post_trial_gap: 0, // No inter-trial interval
-  number_of_dots: 200, // Total number of dots in the aperture
-  RDK_type: 3, // Type of RDK (e.g., global motion)
-  move_distance: 0,
-  choices: ["a", "l"], // Available key choices for response
-  correct_choice: "a", // The correct key for this trial
-  coherent_direction: 180, // Direction of coherent motion in degrees (e.g., left)
-  trial_duration: 1000, // Duration of the trial in milliseconds
-  background_color: "white",
-  dot_color: "black"
-  } 
-  timeline.push(rdk_trial)
-
-  var trial = {
+  var trial1 = {
     type: jsPsychRdk, 
     number_of_apertures: 3, //This needs to be set if more than one aperture
     trial_duration: 10000,
@@ -165,7 +150,36 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
     number_of_dots: [150, 50, 200], //Different parameter for each aperture. Array length must equal number_of_apertures
     aperture_center_x: [window.innerWidth/2, window.innerWidth/2, window.innerWidth/2] //Separate the apertures on the screen (window.innerWidth/2 is the middle of the screen)
  }
-  timeline.push(trial)
+  timeline.push(trial1)
+
+  var trial2 = {
+    type: jsPsychRdk, 
+    number_of_apertures: 3, //This needs to be set if more than one aperture
+    trial_duration: 10000,
+    correct_choice: "f",
+    RDK_type: 3, //Applied to all apertures if only one value
+    move_distance: [1, 0, 1],
+    dot_color: ["yellow", "yellow", "blue"],
+    aperture_width: 200, //Applied to all apertures if only one value
+    number_of_dots: [150, 50, 200], //Different parameter for each aperture. Array length must equal number_of_apertures
+    aperture_center_x: [window.innerWidth/2, window.innerWidth/2, window.innerWidth/2] //Separate the apertures on the screen (window.innerWidth/2 is the middle of the screen)
+ }
+  timeline.push(trial2)
+
+  var trial3 = {
+    type: jsPsychRdk, 
+    number_of_apertures: 3, //This needs to be set if more than one aperture
+    trial_duration: 10000,
+    correct_choice: "a",
+    RDK_type: 3, //Applied to all apertures if only one value
+    move_distance: [1, 0.5, 0],
+    dot_color: ["yellow", "blue", "blue"],
+    aperture_width: 200, //Applied to all apertures if only one value
+    number_of_dots: [200, 150, 50], //Different parameter for each aperture. Array length must equal number_of_apertures
+    aperture_center_x: [window.innerWidth/2, window.innerWidth/2, window.innerWidth/2] //Separate the apertures on the screen (window.innerWidth/2 is the middle of the screen)
+ }
+  timeline.push(trial3)
+
 
   /* start the experiment */
   // @ts-expect-error allow timeline to be type jsPsych TimelineArray
