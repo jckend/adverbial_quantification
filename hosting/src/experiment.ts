@@ -163,7 +163,7 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
     dot_color: ["yellow", "blue"],
     aperture_width: 200, //Applied to all apertures if only one value
     number_of_dots: [50, 200], //Different parameter for each aperture. Array length must equal number_of_apertures
-    aperture_center_x: [(window.innerWidth/2)-300,(window.innerWidth/2)+300] //Separate the apertures on the screen (window.innerWidth/2 is the middle of the screen)
+    aperture_center_x: [window.innerWidth/2, window.innerWidth/2] //Separate the apertures on the screen (window.innerWidth/2 is the middle of the screen)
  }
   timeline.push(trial)
 
