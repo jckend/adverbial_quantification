@@ -200,13 +200,13 @@ var trial2 = {
   const yellow_usually = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: `
-    <p>The blue dots always move.</p>
+    <p>The yellow dots usually move.</p>
     `,
     post_trial_gap: 2000,
   }
 
   const test_procedure = {
-    timeline: [fixation, blue_always, trial1, fixation, yellow_usually, trial2, fixation, trial3],
+    timeline: [fixation, blue_always, trial1, fixation, yellow_usually, trial2, fixation, blue_always, trial3],
     repetitions: 1,
     randomize_order: true,
   }
