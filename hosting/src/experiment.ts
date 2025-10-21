@@ -189,8 +189,24 @@ var trial2 = {
     aperture_center_x: [(window.innerWidth/2)-150, (window.innerWidth/2)+150, (window.innerWidth/2)+150] //Separate the apertures on the screen (window.innerWidth/2 is the middle of the screen)
  }
 
+    const blue_always = {
+    type: jsPsychHtmlKeyboardResponse,
+    stimulus: `
+    <p>The blue dots always move.</p>
+    `,
+    post_trial_gap: 2000,
+  }
+
+  const yellow_usually = {
+    type: jsPsychHtmlKeyboardResponse,
+    stimulus: `
+    <p>The blue dots always move.</p>
+    `,
+    post_trial_gap: 2000,
+  }
+
   const test_procedure = {
-    timeline: [fixation, trial1, fixation, trial2, fixation, trial3],
+    timeline: [fixation, blue_always, trial1, fixation, yellow_usually, trial2, fixation, trial3],
     repetitions: 1,
     randomize_order: true,
   }
