@@ -155,15 +155,15 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
 
   var trial = {
     type: jsPsychRdk, 
-    number_of_apertures: 2, //This needs to be set if more than one aperture
+    number_of_apertures: 3, //This needs to be set if more than one aperture
     trial_duration: 10000,
     correct_choice: "a",
     RDK_type: 3, //Applied to all apertures if only one value
-    move_distance: [0.5, 1],
+    move_distance: [0, 1, 1],
     dot_color: ["yellow", "blue"],
     aperture_width: 200, //Applied to all apertures if only one value
-    number_of_dots: [50, 200], //Different parameter for each aperture. Array length must equal number_of_apertures
-    aperture_center_x: [window.innerWidth/2, window.innerWidth/2] //Separate the apertures on the screen (window.innerWidth/2 is the middle of the screen)
+    number_of_dots: [150, 50, 200], //Different parameter for each aperture. Array length must equal number_of_apertures
+    aperture_center_x: [window.innerWidth/2, window.innerWidth/2, window.innerWidth/2] //Separate the apertures on the screen (window.innerWidth/2 is the middle of the screen)
  }
   timeline.push(trial)
 
