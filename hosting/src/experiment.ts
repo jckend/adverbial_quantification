@@ -189,6 +189,45 @@ var trial2 = {
     aperture_center_x: [(window.innerWidth/2)-150, (window.innerWidth/2)+150, (window.innerWidth/2)+150] //Separate the apertures on the screen (window.innerWidth/2 is the middle of the screen)
  }
 
+    var trial4 = {
+    type: jsPsychRdk, 
+    number_of_apertures: 3, //This needs to be set if more than one aperture
+    trial_duration: 10000,
+    correct_choice: "a",
+    RDK_type: 3, //Applied to all apertures if only one value
+    move_distance: [0, 1, 1],
+    dot_color: ["yellow", "yellow", "blue"],
+    aperture_width: 200, //Applied to all apertures if only one value
+    number_of_dots: [150, 50, 200], //Different parameter for each aperture. Array length must equal number_of_apertures
+    aperture_center_x: [window.innerWidth/2, window.innerWidth/2, window.innerWidth/2] //Separate the apertures on the screen (window.innerWidth/2 is the middle of the screen)
+ }
+
+var trial5 = {
+    type: jsPsychRdk, 
+    number_of_apertures: 3, //This needs to be set if more than one aperture
+    trial_duration: 10000,
+    correct_choice: "f",
+    RDK_type: 3, //Applied to all apertures if only one value
+    move_distance: [1, 0, 1],
+    dot_color: ["yellow", "yellow", "blue"],
+    aperture_width: 200, //Applied to all apertures if only one value
+    number_of_dots: [150, 50, 200], //Different parameter for each aperture. Array length must equal number_of_apertures
+    aperture_center_x: [window.innerWidth/2, window.innerWidth/2, window.innerWidth/2] //Separate the apertures on the screen (window.innerWidth/2 is the middle of the screen)
+ }
+
+  var trial6 = {
+    type: jsPsychRdk, 
+    number_of_apertures: 3, //This needs to be set if more than one aperture
+    trial_duration: 10000,
+    correct_choice: "a",
+    RDK_type: 3, //Applied to all apertures if only one value
+    move_distance: [1, 0.5, 0],
+    dot_color: ["yellow", "blue", "blue"],
+    aperture_width: 200, //Applied to all apertures if only one value
+    number_of_dots: [200, 150, 50], //Different parameter for each aperture. Array length must equal number_of_apertures
+    aperture_center_x: [window.innerWidth/2, window.innerWidth/2, window.innerWidth/2] //Separate the apertures on the screen (window.innerWidth/2 is the middle of the screen)
+ }
+
     const blue_always = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: `
@@ -206,7 +245,7 @@ var trial2 = {
   }
 
   const test_procedure = {
-    timeline: [fixation, blue_always, trial1, fixation, yellow_usually, trial2, fixation, blue_always, trial3],
+    timeline: [fixation, blue_always, trial1, fixation, yellow_usually, trial2, fixation, blue_always, trial3, fixation, trial4, fixation, trial5, fixation, trial6],
     repetitions: 1,
     randomize_order: true,
   }
