@@ -244,8 +244,25 @@ var trial5 = {
     post_trial_gap: 2000,
   }
 
+      const blue_usually = {
+    type: jsPsychHtmlKeyboardResponse,
+    stimulus: `
+    <p>The blue dots usually move.</p>
+    `,
+    post_trial_gap: 2000,
+  }
+
+  const blue_often = {
+    type: jsPsychHtmlKeyboardResponse,
+    stimulus: `
+    <p>The blue dots move more often than not.</p>
+    `,
+    post_trial_gap: 2000,
+  }
+
+
   const test_procedure = {
-    timeline: [fixation, blue_always, trial1, fixation, yellow_usually, trial2, fixation, blue_always, trial3, fixation, trial4, fixation, trial5, fixation, trial6],
+    timeline: [fixation, blue_always, trial1, fixation, yellow_usually, trial2, fixation, blue_always, trial3, fixation, blue_usually, trial4, fixation, blue_often, trial5, fixation, blue_usually, trial6],
     repetitions: 1,
     randomize_order: true,
   }
