@@ -311,7 +311,7 @@ var trial11 = {
     correct_choice: "a",
     RDK_type: 3, //Applied to all apertures if only one value
     aperture_type: 1,
-    move_distance: [1, 0.5, 0],
+    move_distance: [1, 0, 1],
     dot_color: ["blue", "yellow", "yellow"],
     aperture_width: 500, //Applied to all apertures if only one value
     number_of_dots: [200, 150, 50], //Different parameter for each aperture. Array length must equal number_of_apertures
@@ -353,7 +353,7 @@ var trial14 = {
     correct_choice: "f",
     RDK_type: 3, //Applied to all apertures if only one value, 
     aperture_type: 1,
-    move_distance: [1, 0.5, 0],
+    move_distance: [1, 1, 0],
     dot_color: ["yellow", "blue", "blue"],
     aperture_width: 500, //Applied to all apertures if only one value
     number_of_dots: [200, 100, 100], //Different parameter for each aperture. Array length must equal number_of_apertures
