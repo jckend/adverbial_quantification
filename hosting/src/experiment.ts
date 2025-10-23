@@ -325,10 +325,10 @@ var trial11 = {
     correct_choice: "f",
     RDK_type: 3, //Applied to all apertures if only one value
     aperture_type: 1,
-    move_distance: [0, 1, 1],
-    dot_color: ["yellow", "yellow", "blue"],
+    move_distance: [1, 0, 1],
+    dot_color: ["yellow", "blue", "blue"],
     aperture_width: 500, //Applied to all apertures if only one value
-    number_of_dots: [100, 100, 200], //Different parameter for each aperture. Array length must equal number_of_apertures
+    number_of_dots: [200, 100, 100], //Different parameter for each aperture. Array length must equal number_of_apertures
     aperture_center_x: [(window.innerWidth/2)-250, (window.innerWidth/2)-250, (window.innerWidth/2)+250] //Separate the apertures on the screen (window.innerWidth/2 is the middle of the screen)
  }
 
