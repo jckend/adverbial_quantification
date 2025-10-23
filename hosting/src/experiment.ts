@@ -156,6 +156,7 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
     trial_duration: 10000,
     correct_choice: "a",
     RDK_type: 3, //Applied to all apertures if only one value
+    aperture_type: 2,
     move_distance: [0, 1, 1],
     dot_color: ["yellow", "yellow", "blue"],
     aperture_width: 200, //Applied to all apertures if only one value
