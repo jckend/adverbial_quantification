@@ -234,6 +234,91 @@ var trial5 = {
     aperture_center_x: [window.innerWidth/2, window.innerWidth/2, window.innerWidth/2] //Separate the apertures on the screen (window.innerWidth/2 is the middle of the screen)
  }
 
+    var trial7 = {
+    type: jsPsychRdk, 
+    number_of_apertures: 3, //This needs to be set if more than one aperture
+    trial_duration: 10000,
+    correct_choice: "a",
+    RDK_type: 3, //Applied to all apertures if only one value
+    aperture_type: 1,
+    move_distance: [0, 1, 1],
+    dot_color: ["blue", "blue", "yellow"],
+    aperture_width: 500, //Applied to all apertures if only one value
+    number_of_dots: [150, 50, 200], //Different parameter for each aperture. Array length must equal number_of_apertures
+    aperture_center_x: [(window.innerWidth/2)-250, (window.innerWidth/2)-250, (window.innerWidth/2)+250] //Separate the apertures on the screen (window.innerWidth/2 is the middle of the screen)
+ }
+
+var trial8 = {
+    type: jsPsychRdk, 
+    number_of_apertures: 3, //This needs to be set if more than one aperture
+    trial_duration: 10000,
+    correct_choice: "f",
+    RDK_type: 3, //Applied to all apertures if only one value
+    aperture_type: 1,
+    move_distance: [1, 0, 1],
+    dot_color: ["blue", "blue", "yellow"],
+    aperture_width: 500, //Applied to all apertures if only one value
+    number_of_dots: [150, 50, 200], //Different parameter for each aperture. Array length must equal number_of_apertures
+    aperture_center_x: [(window.innerWidth/2)-250, (window.innerWidth/2)-250, (window.innerWidth/2)+250] //Separate the apertures on the screen (window.innerWidth/2 is the middle of the screen)
+ }
+
+  var trial9 = {
+    type: jsPsychRdk, 
+    number_of_apertures: 3, //This needs to be set if more than one aperture
+    trial_duration: 10000,
+    correct_choice: "a",
+    RDK_type: 3, //Applied to all apertures if only one value, 
+    aperture_type: 1,
+    move_distance: [1, 0.5, 0],
+    dot_color: ["blue", "yellow", "yellow"],
+    aperture_width: 500, //Applied to all apertures if only one value
+    number_of_dots: [200, 150, 50], //Different parameter for each aperture. Array length must equal number_of_apertures
+    aperture_center_x: [(window.innerWidth/2)-250, (window.innerWidth/2)+250, (window.innerWidth/2)+250] //Separate the apertures on the screen (window.innerWidth/2 is the middle of the screen)
+ }
+
+    var trial10 = {
+    type: jsPsychRdk, 
+    number_of_apertures: 3, //This needs to be set if more than one aperture
+    trial_duration: 10000,
+    correct_choice: "a",
+    RDK_type: 3, //Applied to all apertures if only one value, 
+    aperture_type: 1,
+    move_distance: [0, 1, 1],
+    dot_color: ["blue", "blue", "yellow"],
+    aperture_width: 500, //Applied to all apertures if only one value
+    number_of_dots: [150, 50, 200], //Different parameter for each aperture. Array length must equal number_of_apertures
+    aperture_center_x: [window.innerWidth/2, window.innerWidth/2, window.innerWidth/2] //Separate the apertures on the screen (window.innerWidth/2 is the middle of the screen)
+ }
+
+var trial11 = {
+    type: jsPsychRdk, 
+    number_of_apertures: 3, //This needs to be set if more than one aperture
+    trial_duration: 10000,
+    correct_choice: "f",
+    RDK_type: 3, //Applied to all apertures if only one value
+    aperture_type: 1,
+    move_distance: [1, 0, 1],
+    dot_color: ["blue", "blue", "yellow"],
+    aperture_width: 500, //Applied to all apertures if only one value
+    number_of_dots: [150, 50, 200], //Different parameter for each aperture. Array length must equal number_of_apertures
+    aperture_center_x: [window.innerWidth/2, window.innerWidth/2, window.innerWidth/2] //Separate the apertures on the screen (window.innerWidth/2 is the middle of the screen)
+ }
+
+  var trial12 = {
+    type: jsPsychRdk, 
+    number_of_apertures: 3, //This needs to be set if more than one aperture
+    trial_duration: 10000,
+    correct_choice: "a",
+    RDK_type: 3, //Applied to all apertures if only one value
+    aperture_type: 1,
+    move_distance: [1, 0.5, 0],
+    dot_color: ["blue", "yellow", "yellow"],
+    aperture_width: 500, //Applied to all apertures if only one value
+    number_of_dots: [200, 150, 50], //Different parameter for each aperture. Array length must equal number_of_apertures
+    aperture_center_x: [window.innerWidth/2, window.innerWidth/2, window.innerWidth/2] //Separate the apertures on the screen (window.innerWidth/2 is the middle of the screen)
+ }
+
+
     const blue_always = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: `
@@ -268,7 +353,7 @@ var trial5 = {
 
 
   const test_procedure = {
-    timeline: [fixation, blue_always, trial1, fixation, yellow_usually, trial2, fixation, blue_always, trial3, fixation, blue_usually, trial4, fixation, blue_often, trial5, fixation, blue_usually, trial6],
+    timeline: [fixation, blue_always, trial1, fixation, trial12, fixation, yellow_usually, trial2, fixation, blue_always, trial3, fixation, blue_usually, trial4, fixation, blue_often, trial5, fixation, blue_usually, trial6],
     repetitions: 1,
     randomize_order: true,
   }
